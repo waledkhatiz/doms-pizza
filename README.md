@@ -10,5 +10,5 @@ UI tools like swing.
 >    java menu
 
 ## Progress: ##
--pizza.java is just a pre-written pizza object that I havent implemented into the main code yet.\
--currently just a layout of the basic UI and functionalities.
+*pizza.java is just a pre-written pizza object that I havent implemented into the main code yet.\
+*currently just a layout of the basic UI and functionalities.
