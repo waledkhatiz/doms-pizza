@@ -4,8 +4,6 @@ A basic pizza ordering app made with Java and Swing.
 Used to demonstrate proficiency using object-oriented languages and 
 UI tools like swing. 
 
-- - - -
-
 ## Running and Compiling: ##\
 >    cd doms-pizza\
 >    javac menu.java\
