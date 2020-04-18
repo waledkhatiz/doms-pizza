@@ -1,4 +1,4 @@
-# doms-pizza #
+# Dom's Pizza #
 A basic pizza ordering app made with Java and Swing.
 
 Used to demonstrate proficiency using object-oriented languages and 
