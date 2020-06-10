@@ -1,5 +1,5 @@
 # doms-pizza
-A basic pizza ordering app made with Java and Swing
+A simple pizza ordering application made with Java.
 
 ## Execution:  
 cd doms-pizza   
