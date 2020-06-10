@@ -1,42 +1,50 @@
-import java.util.ArrayList; 
-import java.util.List;
-
-public class pizza{
-    String[] crust = {"cheeseStuffed", "original", "deepDish"};
-    Double[] crustPrice = {2.0, 0.5, 1.0};
-    String[] meat = {"vegan", "chicken", "beef", "pepperoni"};
-    Double[] meatPrice = {10.0, 9.0, 10.5, 9.0};
-    String[] extra = {"tomato", "onion", "capsicum", "olives", "spinach", "cheese", "bacon"};
-
-    String chosenCrust;
-    Double currentPrice;
-    String chosenMeat;
-    List<String> chosenExtra = new ArrayList<String>();
-
-    public void setCrust(int xCrust) {
-        this.chosenCrust = crust[xCrust];
-        currentPrice = currentPrice + crustPrice[xCrust]; 
+public class pizza {
+    private String[] pizzaType = {"Pepperoni", "Italian", "Cheese", "Meat Lovers"};
+    private Double[] typePrice = {19.99, 15.49, 10.99, 17.49};
+    private String[] pizzaCrust = {"Traditional", "Cheese-Stuffed", "Thin"};
+    private Double[] crustPrice = {0.00, 2.00, 1.00};
+    private String[] pizzaSauce = {"None", "Tomato", "Barbecue", "Chilli"};
+    private Integer chosenType = 0;
+    private Integer chosenCrust = 0;
+    private Integer chosenSauce = 0;
+    private Double currentPrice = 19.99;
+    
+    public void setType(int typeNum){
+        this.chosenType = typeNum;
+        System.out.println(" + $" + typePrice[typeNum]);
     }
 
-    public String getCrust() {
+    public Integer getType() {
+        return chosenType;
+    }
+
+    public void setCrust(int crustNum){
+        this.chosenCrust = crustNum;
+        System.out.println(" + $" + crustPrice[crustNum]);
+    }
+
+    public Integer getCrust(){
         return chosenCrust;
     }
 
-    public void setMeat(int xMeat) {
-        this.chosenMeat = meat[xMeat];
-        currentPrice = currentPrice + meatPrice[xMeat];
+    public void setSauce(int sauceNum) {
+        this.chosenSauce = sauceNum;
     }
 
-    public String getMeat() {
-        return chosenMeat;
+    public Integer getSauce() {
+        return chosenSauce;
     }
 
-    public void addExtra(int xExtra) {
-        chosenExtra.add(extra[xExtra]);
-        currentPrice = currentPrice + 1.5;
+    public Double getPrice() {
+        currentPrice = 0.0;
+        currentPrice += typePrice[chosenType];
+        currentPrice += crustPrice[chosenCrust];
+        return currentPrice;
     }
 
-    public Object[] getExtra() {
-        return chosenExtra.toArray();
+    public String getOrderString() {
+        String orderString = "Type: " + pizzaType[chosenType] + " || Sauce: " + pizzaSauce[chosenSauce] + 
+                                " || Crust: " + pizzaCrust[chosenCrust] + " || $" + currentPrice;
+        return orderString;
     }
 }
