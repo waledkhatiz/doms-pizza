@@ -39,12 +39,20 @@ public class pizza {
         currentPrice = 0.0;
         currentPrice += typePrice[chosenType];
         currentPrice += crustPrice[chosenCrust];
+        currentPrice = Math.round(currentPrice * 100.0)/100.0;
         return currentPrice;
     }
 
     public String getOrderString() {
         String orderString = "Type: " + pizzaType[chosenType] + " || Sauce: " + pizzaSauce[chosenSauce] + 
-                                " || Crust: " + pizzaCrust[chosenCrust] + " || $" + currentPrice;
+                                " || Crust: " + pizzaCrust[chosenCrust] + " || $" + this.getPrice();
         return orderString;
+    }
+
+    public void resetOrder() {
+        chosenType = 0;
+        chosenCrust = 0;
+        chosenSauce = 0;
+        currentPrice = 0.0;
     }
 }

@@ -33,7 +33,7 @@ public class menu {
 
         List<String> orderStrings = new ArrayList<String>();
         DefaultListModel listElements = new DefaultListModel();
-        listElements.addElement("no");
+        listElements.addElement("No Orders");
         JList orderList = new JList(listElements);
         orderList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
@@ -111,6 +111,7 @@ public class menu {
                 listElements.clear();
                 total.setText("Total: $0");
                 count.setText("Count: ");
+                currentOrder.resetOrder();
                }    
         });
 
@@ -137,7 +138,6 @@ public class menu {
 
         submitOrder.addActionListener(new java.awt.event.ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent e){
-                pizzaMenu.setVisible(false);
                 orderStrings.add(currentOrder.getOrderString());
                 listElements.clear();
                 for(Integer x = 0; x < orderStrings.size(); x++){
@@ -151,7 +151,12 @@ public class menu {
                 }
                 total.setText("Total: $" + totalPrice);
                 count.setText("Count: " + orderStrings.size());
-                orderPanel.repaint();
+                orderPanel.repaint();  
+                pizzaMenu.setVisible(false);
+                selectType.setSelectedIndex(0);
+                selectSauce.setSelectedIndex(0);
+                selectCrust.setSelectedIndex(0);
+                currentOrder.resetOrder();
             }
         });
     }
